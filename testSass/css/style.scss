@@ -1,0 +1,139 @@
+* {
+    margin: 0 auto;
+    padding: 0;
+}
+
+$fond: bisque;
+$couleurText: rgb(130, 238, 153);
+$police: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+$randomColor: rgb(random(255), random(255), random(255));
+$largeurfond: 1440;
+
+$gabarit: red;
+$couleurFond:"";
+
+@function changeCouleur($couleurFond){
+    @if $couleurFond==green{
+        $couleurFond:blue;
+        @return $couleurFond;
+    }
+
+ 
+    @else if $couleurFond==blue{
+        $couleurFond:yellow;
+        @return $couleurFond;
+    }
+
+    @else{
+        $couleurFond:orange;
+        @return $couleurFond;
+    }
+}
+
+
+@mixin button {
+    padding: 5px 15px;
+    background-color: rgb(133, 133, 26);
+    box-shadow: 2px 1px 2px 1px 0.5;
+}
+
+@mixin arrondi($degres) {
+    border-radius: ($degres);
+    text-align: center;
+}
+
+@mixin flexmid {
+    display: flex;
+    flex-direction: row;
+}
+
+@mixin styleP {
+    font-size: 1.5rem;
+    font-family: ($police);
+    width: 30%;
+    color: rgb(94, 3, 146);
+    background-color: rgb(155, 109, 155);
+    @include arrondi(15px);
+    text-align: justify;
+    margin-top: 50px;
+    padding: 10px;
+}
+
+@mixin paragraphe($police, $largeur, $alignement) {
+    font-family: $police;
+    width: $largeur;
+    text-align: $alignement;
+}
+
+@function add($a, $b) {
+    $resultat: $a+$b;
+    @return $resultat;
+}
+
+
+body {
+    background-color: changeCouleur(green);
+    margin: 0 round($largeurfond/100)+px;
+}
+
+.item {
+    color: $couleurText;
+}
+
+.contNav {
+    background-color: $gabarit;
+
+    @if($gabarit==green) {
+        background-color: rgb(153, 194, 153);
+    }
+
+    @else if($gabarit==red) {
+        background-color: rgb(153, 8, 8);
+    }
+
+    @else {
+        background-color: rgb(129, 129, 240);
+    }
+
+    .nav {
+        width: 150px;
+        background-color: pink;
+        @include flexmid();
+
+        li {
+            font-size: 30px;
+
+            &:first-child {
+                color: blue;
+            }
+
+            &:hover {
+                color: red;
+            }
+        }
+
+        @include arrondi(20px);
+        height: add(20vh, 50vh);
+    }
+}
+
+.myButton {
+    @include button();
+}
+
+p {
+    @include styleP();
+    @include paragraphe(imapct, 300px, justify);
+}
+
+.titre {
+    font-size: 50px;
+    font-weight: 700;
+    font-family: sans-serif;
+}
+
+.titre2 {
+    @extend .titre;
+    letter-spacing: -5px;
+    color: cadetblue;
+}

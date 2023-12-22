@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exo d'Algo(Part 4) - #01 - Les élèves</title>
+    <link href="./css/style.css" rel="stylesheet" />
+    <script type="text/javascript" src="./js/eleve.js"></script>
+</head>
+
+<body>
+    <div class="card">
+        <p class="h6 font-weight-bold text-center">#01 - Les élèves</p>
+        <div class="instructions">
+            <p class="text-secondary">Le script que vous avez enregistré dans <em>eleve.js</em>(répertoire js) est
+                inclus dans ce fichier html ;
+                la classe (ou fonction de construction) que vous avez créé(e) est donc utilisble depuis ce fichier html.
+            </p>
+            <ul class="text-secondary">
+                <li>Dans la zone encadrée par les balises &lt;script&gt; &lt;/script&gt;, écrire les instructions qui
+                    permettent :
+                    <ul>
+                        <li>
+                            De créer les objets élèves pierreDupont, marieFontaine, johnHunter.<br>
+                            Vous leur attribuerez le nom et le prénom qui semblent en accord avec
+                            le nom de la variable choisi pour les identifier.<br>
+                            Vous leur attribuerez la classe (Kercode, CDA, CDUI ou BTS SIO) de votre choix.<br>
+                            <p class="text-danger">Les objets élèves seront rangés dans le tableau du groupe des élèves,
+                                déjà déclaré et défini.</p>
+                        </li>
+                        <li>
+                            De lire le prénom de l'objet pierreDupont et de l'afficher dans la console,
+                        </li>
+                        <li>
+                            De lire la classe de marieFontaine et de l'afficher dans la console,
+                        </li>
+                        <li>
+                            D'attribuer à marieFontaine et à johnHunter leur première note en maths,
+                        </li>
+                        <li>
+                            D'attribuer à tous les élèves connus leur première note en algorithmique.<br>
+                            L'attribution doit être faite de manière automatique par itération sur le groupe des
+                            élèves...
+                            (Ne voyez-vous pas une boucle là-dessous ?)<br>
+                            La note sera aléatoirement choisie entre 0 et 20 (indice : voir la méthode random
+                            de l'objet global JavaScript Math)
+                        </li>
+                        <li>
+                            De calculer la moyenne en algorithmique de tous les élèves et de l'afficher dans la console
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    Ouvrir la console (dans votre navigateur ou depuis le débugueur de VSCode) et recharger votre
+                    code.<br>
+                    Pour rappel, les instructions ayant été écrites hors de toute fonction, sont exécutées au chargement
+                    de la page !!!
+                    <p class="text-success">Tous les résultats devraient être dans la console !</p>
+                    <p>N'hésitez pas à utiliser cette console pour interroger les objets,
+                        pour débuguer ou par curiosité.</p>
+                </li>
+            </ul>
+        </div>
+
+
+        <script type="text/javascript">
+            let groupeEleves = [];
+
+            //Créationd de 3 élèves grace à la class eleve.js
+            let pierreDupont = new Eleve("Dupont", "Pierre", "CDUI"); //Ajout d'un nouvel eleve avec ses caractéristiques
+            let marieFontaine = new Eleve("Fontaine", "Maire", "CDA");
+            let johnHunter = new Eleve("Hunter", "John", "Kercode");
+
+            //Ajout des élèves dans un tableau
+            groupeEleves.push(pierreDupont, marieFontaine, johnHunter)
+
+            //Ajout de note 
+            marieFontaine.notes.maths.push(12)
+            johnHunter.notes.maths.push(11)
+
+            //Fonction qui retourne un nombre aléatoire
+            function randomNote() {
+                //21 est la valeur max exclue
+                return Math.floor(Math.random() * 21).toFixed(2)
+            }
+
+            //Boucle qui parcoure le tableau des élèves et leur ajoute une note aléatoire en algorithmique
+            groupeEleves.forEach(function (Eleve) {
+                Eleve.notes.algorithmique.push(randomNote())
+            })
+
+            let totalAlgo = 0
+            let totalNote = 0
+            let average = 0
+
+            //Boucle dans une boucle qui récupère les différentes notes dans le tableau algorithmique
+            //Et les additionnes
+            for (let i = 0; i < groupeEleves.length; i++) {
+                for (let j = 0; j < groupeEleves[i].notes.algorithmique.length; j++) {
+                    totalAlgo += parseInt(groupeEleves[i].notes.algorithmique[j])
+                    //ajoute +1 au compteur de note
+                    totalNote++
+                }
+            }
+            //Calcul de la moyenne des notes algorithmique
+            average = totalAlgo / totalNote
+            console.log("La moyenne de classe en Algo est de " + average.toFixed(2))
+
+
+            pierreDupont.bonjour()
+
+            johnHunter.addNote("javascript", 16)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </script>
+</body>
+
+</html>

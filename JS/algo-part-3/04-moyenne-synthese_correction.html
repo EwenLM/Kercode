@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exo d'Algo(3) - La moyenne (version 2)</title>
+    <link href="./style.css" rel="stylesheet" />
+    <script type="text/javascript" src="./tools.js"></script>
+</head>
+
+<body>
+    <div class="card">
+        <p class="h6 font-weight-bold text-center">#04 - La moyenne (version 2)</p>
+        <div class="instructions">
+            <p class="text-secondary">Nous allons repartir des travaux faits lors de l'exercice #03 La moyenne.</p>
+            <p class="text-secondary">Le principe de calcul reste identique. Vous réutiliserez donc le code qui calcule
+                la moyenne de <u>plusieurs</u> notes, arrondie à 2 chiffres après la virgule ; vous choisirez la
+                solution qui utilise la méthode
+                .forEach().<br />
+                Le mécanisme de déclenchement du calcul reste inchangé : evénement 'click' sur le bouton "Calculer la
+                moyenne"
+            </p>
+            <p class="text-secondary">Ce qui change et ce que vous devez faire :
+                <ul>
+                    <li>Ajouter dans le html un champ de saisie d'une note supplémentaire
+                        qui viendra s'ajouter aux précédentes notes (celles du tableau 'notes'). La nouvelle note
+                        sera mémorisée !
+                    </li>
+                    <li>Ajouter dans le html, à l'endroit de votre choix, un paragraphe (ou tout autre élément qui
+                        ferait l'affaire)
+                        où sera affichée (plus exactement raffraîchie) la moyenne calculée après l'appui sur le bouton.
+                    </li>
+                </ul>
+            </p>
+            <p></p>
+            <p class="text-secondary">Suggestion : n'hésitez pas à découper en plusieurs fonctions</p>
+            <p class="text-success">Bonus : les notes attribuées sont comprise entre 0 et 20 (en principe !)</p>
+        </div>
+        <!-- input type="number" min="0" max="20" id="newnote" placeholder="note" / -->
+        <input type="text" id="newnote" placeholder="note" />
+
+
+        <button type="button" class="btn btn-primary" onclick="refreshAverage()">
+            (Re)Calculer la moyenne
+        </button>
+        <p id="result-area"></p>
+    </div>
+
+
+
+    <script type="text/javascript">
+        /*
+         * Variables déclarées hors fonction donc visibles par l'ensemble du code 
+         * Rappel : le code déclaré hors d'une fonction (tel que les 4 lignes qui suivent)
+         * est exécuté lors du chargement de la page dans le 
+         */
+        let notes = [8.75, 14, 13, 5.5];
+
+        /*
+         * calcul de la moyenne (appelée par la fonction refreshAverage)
+         * Paramètre : noteArray : tableau des valeurs à moyenner
+         * Retour : la moyenne calculée
+         */
+
+         function average(noteArray) {
+            const noteCount = noteArray.length;
+            let sum = 0;
+
+            for (let i=0; i< noteCount; i++) {
+                sum += noteArray[i];
+            }
+
+            return((sum / noteCount).toFixed(2));
+        }
+        /*
+         * La fonction refreshAverage est la fonction qui est appelée et exécutée 
+         * lors de chaque clic sur le bouton "Calculer la moyenne".
+         * Paramètres :
+         * Retour :
+         */
+
+        function refreshAverage() {
+            // Remise à 0 des éléments qui servent à calculer une moyenne = sumNotes / countNotes
+            sumNotes = 0;
+            countNotes = 0;
+
+            // ---- Partie 1 : acquisition, test et stockage de la note saisie ----
+            // lecture, conversion et test de la note lue dans l'élément inputText
+            let newNote = document.getElementById('newnote').value;
+
+            if (newNote !== "") {
+                // quelque chose a été saisi dans l'élément html <input type="text" ...>
+                let newNoteFloat = parseFloat (newNote);        // conversion en nombre flottant
+                if (isNaN(newNoteFloat)) {
+                    // ce qui a été saisi n'est pas un nombre
+                    alert ("Veillez saisir un nombre !");
+                    return;     // fin prématurée
+                }
+                else if ((newNoteFloat < 0) || (newNoteFloat > 20)) {
+                    // le test peut aussi s'écrire if (!((newNoteFloat >= 0) && (newNoteFloat =< 20)))
+                    // la saisie est bien un nombre mais ce nombre n'est pas entre 0 et 20
+                    alert ("Veillez saisir un nombre entre 0 et 20 !");
+                    return;     // fin prématurée
+                }
+                else {
+                    // arrivé à ce stade tout est ok : c'est bien un nombre entre 0 et 20 -> rangement de la note
+                    notes.push(newNoteFloat);
+                }
+            }
+
+            // ---- Partie 2 : calcul de la moyenne par appel de fonction "average" ----
+            // A ce stade, soit une nouvelle note est correctement entrée, soit il n'y a eu aucune saisie,
+            // DOnc calcul (ou recalcul) de la moyenne et affichage des résultats
+            let moyenne = average(notes);
+            
+            // ---- Partie 3 : affichage des résultats (tableau des notes, puis moyenne) ----
+            displayArray(notes);
+            alert(moyenne);
+
+            return;         // implicite si pas écrit
+        }
+        // le traitement déclenché lors du clic se termine là.
+
+      
+    </script>
+</body>
+
+</html>

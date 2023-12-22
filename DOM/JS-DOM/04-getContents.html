@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mon super titre</title>
+</head>
+
+<body>
+
+    <section>
+        <a  href="www.google.com" class="one two three">
+            <b>Lorem</b> ipsum dolor sit amet, consectetur adipisicing elit.
+            Aliquam commodi nam necessitatibus possimus qui quidem reiciendis reprehenderit sint ut.
+            Aliquid assumenda culpa doloribus exercitationem illum iure magnam necessitatibus rem sit.
+            <h1 id="myid"></h1>
+        </a>
+    </section>
+    
+    <!-- À appeler dans un js à part -->
+    <script type="text/javascript">
+        let link = document.querySelector('a');
+        
+        console.log("À partir de la variable link, afficher les informations ci-dessous");
+        console.log("-----------------------------------");
+        console.log("Afficher le contenu html :");
+        console.log(link.innerHTML);
+        console.log("-----------------------------------");
+        console.log("Afficher le texte :");
+        console.log(link.innerText);
+        console.log("-----------------------------------");
+        console.log("Afficher l'id :");
+        console.log(link.children[3]);
+        console.log("-----------------------------------");
+        console.log("Afficher les classes :");
+        console.log(link.getAttribute("class"));
+        console.log("-----------------------------------");
+        
+        let monId
+        
+        for (i = 0; i<link.children.length; i++) {
+            if (link.children[i].id!="") {
+                monId=link.children[i]
+                console.log(monId)
+            };
+            // console.log(child)
+            // console.log(child[i])
+        };
+      
+        
+        
+
+
+    </script>
+</body>
+
+</html>

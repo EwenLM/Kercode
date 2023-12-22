@@ -1,0 +1,961 @@
+/* ============Variables=======================*/
+:root {
+    --bleu: rgba(50, 92, 148, 1);
+    --gris: rgba(242, 242, 242, 1);
+    --beige: rgba(191, 188, 136, 1);
+}
+
+/* Police bebas*/
+@font-face {
+    font-family: 'bebas_kairegular';
+    src: url('font/bebaskai-webfont.woff2') format('woff2'),
+        url('font/bebaskai-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/* Police poppins */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 500;
+    src: url('font/poppins-v20-latin-regular.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* ========================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Pour éviter le scroll horizontale, cache les éléments */
+html,
+body {
+    overflow-x: hidden;
+}
+
+/*style des liens*/
+a {
+    text-decoration: none;
+    color: white;
+}
+
+/*Gère le style des liste à puces*/
+ul {
+    list-style: none;
+}
+
+body {
+    font-family: 'Poppins';
+    font-size: 16px;
+}
+
+#contenu {
+    max-width: 1200px;
+    /*Si écran > à 1200px*/
+    width: 100%;
+    margin: 0 auto;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'bebas_kairegular';
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+
+/* ================Mobile======================= */
+
+/* ================Bandeau====================== */
+
+#logo {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+#menuBandeau {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--beige);
+    margin-top: 0;
+    padding: 15px;
+}
+
+
+#burger i {
+    color: white;
+    display: flex;
+    justify-content: flex-start;
+    text-align: right;
+    font-size: 2rem;
+    width: 5%;
+}
+
+#burger:hover {
+    border-bottom: 3px solid var(--bleu)
+}
+
+#compte {
+    color: white;
+    display: flex;
+    margin-right: 20px;
+    font-size: 2rem;
+    width: 15%;
+}
+
+#compte .iconeCompte {
+    padding-right: 15px;
+}
+
+#compte i:hover {
+    color: 3px solid var(--bleu);
+}
+
+#login {
+    background-color: var(--beige);
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    left: 50%;
+    border-radius: 0 0 10px 10px;
+    z-index: 1000;
+    display: none;
+}
+
+#login a {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+}
+
+#bandeau #menuPrincipal {
+    width: 40%;
+}
+
+#menuPrincipal {
+    border-radius: 0 0 10px 10px;
+    position: absolute;
+    z-index: 1000;
+}
+
+#menuPrincipal ul {
+    background-color: var(--beige);
+    font-size: 1.5rem;
+    border-radius: 0 0 10px 10px;
+    text-transform: uppercase;
+    display: none;
+    width: 100%;
+    height: 100%;
+}
+
+#menuPrincipal ul li a {
+    color: rgb(247, 247, 247);
+
+}
+
+#menuPrincipal ul li a:hover {
+    color: var(--bleu);
+}
+
+#menuPrincipal ul li {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+
+#menuPrincipal ul.on {
+    line-height: 65px;
+}
+
+#menuPrincipal #reseau {
+    display: flex;
+    margin: auto;
+}
+
+#menuPrincipal .formatDesk {
+    display: none;
+}
+
+/* ========================Intro============================= */
+#container {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* align-items: center; */
+    margin-top: 50px;
+}
+
+#container h2 {
+    display: flex;
+    justify-content: center;
+    font-weight: 500;
+    color: var(--bleu);
+}
+
+#container hr {
+    width: 90%;
+    margin: auto;
+    color: var(--bleu);
+}
+
+#container .intro {
+    margin: auto;
+    margin-bottom: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: justify;
+    padding: 30px;
+    background-color: var(--gris);
+    width: 80%;
+    border-radius: 5px;
+    box-shadow: 1px 4px 4px 1px rgba(0, 0, 0, 0.2);
+    ;
+}
+
+#container .intro:hover {
+    box-shadow: 2px 8px 8px 2px rgba(0, 0, 0, 0.2);
+}
+
+/* ==============================Actualite=============================== */
+.slider-wrapper {
+    display: none;
+}
+
+#container .actu {
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 30px;
+    background-color: var(--gris);
+    width: 50%;
+    border-radius: 5px;
+    box-shadow: 1px 4px 4px 1px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+#container .actu:hover {
+    box-shadow: 2px 8px 8px 2px rgba(0, 0, 0, 0.2);
+}
+
+#container h3 {
+    color: black;
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+    font-family: 'Poppins';
+    font-weight: 600;
+    font-size: 1, 5rem;
+}
+
+#container .actu p {
+    margin-bottom: 10px;
+}
+
+#container a {
+    color: white;
+    background-color: var(--bleu);
+    padding: 3px;
+    margin-top: 15px;
+    border-radius: 10px;
+    padding: 10px;
+}
+
+#container a:hover {
+    box-shadow: 1px 4px 4px 1px rgba(0, 0, 0, 0.2);
+}
+
+#container .actu a {
+    width: 75px;
+    align-content: flex-end;
+}
+
+#groupActu {
+    margin-bottom: 50px;
+}
+
+/* ===========================Produit============================ */
+#container #groupProduit {
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+#container .produitAccueil {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-bottom: 30px;
+    justify-content: center;
+    padding: 30px;
+    background-color: var(--gris);
+    width: 70%;
+    border-radius: 5px;
+    box-shadow: 1px 4px 4px 1px rgba(0, 0, 0, 0.2);
+    ;
+}
+
+#container .produitAccueil img {
+    padding: 10px;
+}
+
+#container .produitAccueil h3 {
+    padding-top: 20px;
+}
+
+
+
+/* ========================Footer============================== */
+
+#pied #bas {
+    background-color: var(--beige);
+    padding: 0 80px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+}
+
+#pied .colonne {
+    margin-top: 50px;
+}
+
+#pied h3 {
+    font-size: 1.8rem;
+    color: var(--bleu);
+    font-family: 'Poppins';
+}
+
+#pied p,
+a {
+    color: #0C0B0B;
+}
+
+#pied .mentions {
+    width: 100%;
+    background-color: var(--bleu);
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: flex;
+    justify-content: center;
+}
+
+#pied .mentions p,
+a {
+    color: white;
+}
+
+#logorond {
+    display: none;
+}
+
+#reseauFooter {
+    display: none;
+}
+
+#linkMap p:hover {
+    box-shadow: 0 1px;
+}
+
+/* =========================Page Actu=========================== */
+.news {
+    margin: auto;
+    padding: 30px;
+    background-color: var(--gris);
+    width: 50%;
+    border-radius: 5px;
+    box-shadow: 1px 0px 4px 1px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+
+.groupImg {
+    margin: auto;
+    padding: 30px;
+    margin-bottom: 50px;
+    background-color: var(--bleu);
+    width: 50%;
+    border-radius: 5px;
+    box-shadow: 1px 0px 4px 1px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+.imgActu {
+    margin: auto;
+    width: 90%;
+}
+
+
+/* =======================Page Produit========================= */
+
+#produit {
+    margin-top: 50px;
+    margin-bottom: 20%;
+}
+
+#produit ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 50px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+#produit ul li {
+    margin-right: 30px;
+    padding: 5px 8px;
+    border-radius: 5px;
+    margin-bottom: 30px;
+    background-color: var(--beige);
+    width: 80px;
+    height: 25px;
+    font-size: 1.3rem;
+    text-align: center;
+}
+
+#produit ul li a {
+    padding: 0;
+    background-color: transparent !important;
+    box-shadow: none;
+}
+
+#produit ul li a:hover {
+    box-shadow: none !important;
+}
+
+#produit nav {
+    display: flex;
+    justify-content: center;
+}
+
+#produit ul li:hover {
+    box-shadow: 1px 4px 4px 1px rgba(0, 0, 0, 0.2);
+}
+
+.containerGrid {
+    max-width: 1200px;
+    width: 100%;
+    margin: 10px auto;
+    margin-bottom: 100px;
+    display: grid;
+    gap: 20px;
+    row-gap: 250px;
+    grid-template-columns: repeat(auto-fill, 250px);
+    border-top: 1px solid --bleu;
+    justify-content: center;
+}
+
+.idée {
+    width: 250px;
+    height: 200px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.idée:hover {
+    box-shadow: 0 16px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+
+.idée h3,
+p {
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-bottom: 10px;
+}
+
+.idée img {
+    width: 100%;
+    border-radius: 0 0 8px 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    margin-top: 15px;
+}
+
+.idée img:hover {
+    box-shadow: 0 16px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+#produit ul li:active {
+    background-color: var(--bleu);
+}
+
+#produit ul li:focus-within {
+    background-color: var(--bleu);
+}
+
+
+/* ========================= PageContact============================ */
+
+section {
+    margin-top: 40px;
+}
+
+#conteainer .contact p {
+    width: 80%;
+    margin: 20px;
+    font-size: 1.5rem;
+}
+
+#formContact {
+    font-size: 1.4rem;
+    font-family: 'Poppins';
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 50px;
+
+}
+
+#formContact p {
+    border: solid 1px var(--beige);
+    width: 88%;
+    margin: 4px;
+    border-radius: 20px;
+    padding: 8px 16px;
+}
+
+#formContact #genre {
+    width: 83.5%;
+}
+
+#formContact #genre label {
+    padding-right: 1%;
+}
+
+#formContact p:nth-child(1) {
+    border: none;
+}
+
+#formContact p:nth-child(2),
+#formContact p:nth-child(3),
+#formContact p:nth-child(4),
+#formContact p:nth-child(5),
+#formContact p:nth-child(6) {
+    border: none;
+    padding: 0;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+}
+
+input[type=text],
+input[type=email],
+input[type=tel],
+textarea {
+    border: solid 1px var(--beige);
+    width: 45%;
+    margin: 4px;
+    border-radius: 20px;
+    padding: 15px 16px;
+}
+
+textarea {
+    height: 150px;
+    width: 100%;
+}
+
+#formContact p input::placeholder {
+    color: #0C0B0B;
+    font-family: 'Poppins';
+    font-size: 1.1rem;
+}
+
+#formContact textarea {
+    color: #0C0B0B;
+    font-family: 'Poppins';
+    font-size: 1.1rem;
+}
+
+#formContact select {
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    font-family: 'Poppins';
+}
+
+
+#formContact p label {
+    display: inline-block;
+    margin: 0 5px 0 10px;
+}
+
+
+#formContact p:nth-child(7),
+#formContact p:nth-child(8),
+#formContact p:nth-child(9) {
+    border: none;
+}
+
+#formContact p:nth-child(9) {
+    text-align: right;
+}
+
+.champs {
+    font-size: 0.9rem;
+
+}
+
+#formContact #button {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 40px;
+}
+
+#formContact .bouton {
+    border: none;
+    background-color: var(--bleu);
+    color: white;
+    padding: 8px 24px;
+    border-radius: 5px;
+    font-size: 1.4rem;
+    font-size: 'Poppins';
+    margin-right: 5px;
+}
+
+#container .politique {
+    background-color: transparent;
+    color: var(--bleu);
+}
+
+#containMap {
+    width: 100%;
+    height: 300px;
+    display: flex;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+/* ==========================Page Compte===================================== */
+
+
+#creerCompte h3 {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-size: 1.8rem;
+    color: var(--bleu);
+    margin-bottom: 50px;
+    margin-top: 10px;
+}
+
+#creerCompte p:nth-child(1) {
+    border: none;
+}
+
+#creerCompte input[type=password] {
+    border: solid 1px var(--beige);
+    width: 45%;
+    margin: 4px;
+    border-radius: 20px;
+    padding: 15px 16px;
+}
+
+#creerCompte .formCompte .button {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 40px;
+    border: none;
+}
+
+#creerCompte div{
+    background-color: var(--gris);
+    margin-bottom: 50px;
+    border-radius: 10px;
+}
+
+
+
+
+/* ==========================Mediaqueries==================================== */
+
+
+/* ==========================Ecran > 768px================================= */
+
+@media screen and (min-width:768px) {
+
+    #logo {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+    }
+
+    #container {
+        margin-top: 100px;
+    }
+
+    #menuBandeau {
+        display: none;
+    }
+
+
+    #menuPrincipal .formatDesk {
+        display: flex;
+    }
+
+    #menuPrincipal .formatDesk .current {
+        border-bottom: 4px solid var(--bleu);
+    }
+
+    #bandeau #menuPrincipal {
+        width: 100%;
+        left: 0;
+    }
+
+    #bandeau #menuPrincipal ul {
+        display: flex;
+        justify-content: space-between;
+        font-size: 1rem;
+        align-items: center;
+        height: 40px;
+        border-radius: 0;
+    }
+
+    #bandeau #menuPrincipal ul .fixed {
+        position: fixed;
+        top: 0;
+        z-index: 1000;
+    }
+
+    #menuPrincipal ul li .current {
+        border-bottom: 4px solid var(--bleu);
+    }
+
+
+    #menuPrincipal #reseau {
+        display: none;
+    }
+
+    #container hr {
+        width: 88%;
+    }
+
+    #formContact #nom label {
+        padding-right: 18%;
+    }
+
+    #container hr {
+        width: 86%;
+        color: var(--bleu);
+    }
+
+    #container h2 {
+        font-size: 2.5rem;
+        padding-bottom: 20px;
+    }
+
+    #bandeau #menuPrincipal ul {
+        font-size: 1rem;
+    }
+
+    #container .intro {
+        flex-direction: row;
+    }
+
+    #container .intro #textIntro {
+        font-size: 1.5rem;
+        padding-right: 30px;
+    }
+
+    #groupActu,
+    #groupProduit {
+        display: none;
+    }
+
+
+
+    #pied #bas a {
+        color: #0C0B0B;
+    }
+
+    #reseauFooter {
+        display: flex;
+    }
+
+    #reseauFooter .reseauLogo i {
+        color: #0C0B0B;
+        font-size: 2.5rem;
+        padding: 20px 20px;
+    }
+
+    /* ===================Slider========================================= */
+
+
+    .slider-wrapper {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 100px;
+
+    }
+
+    .nivo-caption {
+        display: flex;
+        flex-direction: column;
+        left: 5%;
+        bottom: 0;
+        top: 20%;
+        background: transparent;
+        color: black;
+        width: 45%;
+        padding: 20px 10px;
+        opacity: 1;
+        -moz-opacity: 1;
+        filter: alpha(opacity=1);
+        display: flex;
+    }
+
+
+    #slider .titreSlider {
+        font-size: 2rem;
+        color: var(--beige);
+    }
+
+    #slider p {
+        padding-top: 60px;
+        padding-bottom: 60px;
+        font-size: 1.5rem;
+    }
+
+    #slider .bouton {
+        width: 80px;
+    }
+
+    #slider2 .nivo-caption {
+        display: flex;
+        flex-direction: column;
+        left: 60%;
+        bottom: 0;
+        top: 20%;
+        background: transparent;
+        color: black;
+        width: 40%;
+        padding: 20px 10px;
+        opacity: 1;
+        -moz-opacity: 1;
+        filter: alpha(opacity=1);
+        display: flex;
+    }
+
+    #slider2 .titreSlider {
+        font-size: 2rem;
+        color: var(--bleu);
+    }
+
+    #slider2 p {
+        padding-top: 60px;
+        padding-bottom: 60px;
+        font-size: 1.3rem;
+    }
+
+    #slider2 .bouton {
+        width: 200px;
+    }
+
+    .theme-default .nivo-controlNav a {
+        width: 15px;
+        height: 15px;
+        padding: 0px !important;
+        background-color: white !important;
+    }
+
+    .theme-default .nivo-directionNav a {
+        width: 10px;
+        background-color: transparent !important;
+        color: var(--beige) !important;
+        opacity: 1 !important;
+    }
+
+    /* ========================Page Actu > 768px==============================*/
+    .containerNews {
+        display: none;
+    }
+
+    #slider .pnews,
+    #slider2 .pnews {
+        font-size: 1rem;
+        padding-top: 20px;
+    }
+
+    #slider2 .nivo-caption {
+        top: 5%;
+        left: 55%;
+        width: 45%;
+    }
+
+    #slidernews #slider2 .nivo-caption p {
+        font-size: 0.8rem;
+    }
+
+
+
+
+}
+
+/*=========================Ecran > 992px================================= */
+
+
+@media screen and (min-width:992px) {
+    #bandeau #menuPrincipal ul {
+        font-size: 1.3rem;
+    }
+
+    #formContact #genre {
+        width: 85.5%;
+    }
+
+    #slider .pnews,
+    #slider2 .pnews {
+        font-size: 1.3rem;
+        padding-top: 20px;
+    }
+
+    #slidernews #slider2 .nivo-caption p {
+        font-size: 1.1rem;
+    }
+
+    #pied #bas .colonne h2 {
+        font-size: 2rem;
+    }
+
+    #pied #bas .colonne p {
+        font-size: 1.3rem;
+    }
+
+    #logorond {
+        display: block;
+        width: 10%;
+    }
+
+    #creerCompte {
+        display: flex;
+        justify-content: space-around;
+    }
+
+    #creerCompte div{
+    width: 40%;
+    }
+}

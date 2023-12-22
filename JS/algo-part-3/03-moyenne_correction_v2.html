@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exo d'Algo(3) - Ma phase</title>
+    <!-- link href="./bootstrap.min.css" rel="stylesheet" / -->
+    <link href="./style.css" rel="stylesheet" />
+    <script type="text/javascript" src="./tools.js"></script>
+</head>
+<body>
+
+<div class="card">
+    <p class="h6 font-weight-bold text-center">#03 - La moyenne</p>
+    <div class="instructions">
+        <p class="text-secondary">Proposez successivement deux écritures pour la function average qui calcule et affiche une 
+            moyenne des notes données dans le tableau du même nom.<br/>
+            <strong>const notes = [8.75, 14, 13, 5.5, 9, 17, 11.25]</strong><br />
+            La moyenne sera arrondie à 2 chiffres après la virgule.
+            <p></p>
+            <p>Les 2 méthodes :</p>
+            <ul>
+                <li>avec une boucle for ou for...of</li>
+                <li>avec la méthode forEach()</li>
+            </ul>
+        </p>
+        <p></p>
+        <p class="text-secondary">Si tout se passe normalement :</p>
+        <p class="text-success">average (notes) affichera 11.21</p>
+    </div>
+
+    <button type="button" class="btn btn-primary" onclick="average(notes)">
+        Calculer la moyenne
+    </button>
+</div>
+
+<script type="text/javascript">
+
+    const notes = [8.75, 14, 13, 5.5, 9, 17, 11.25];
+
+    /* Déclaration (et initialisation à 0) d'une variable pour ranger le cumul des notes ; il y a obligation 
+       de déclaration externe pour qu'elle soit visible de tous les appels de la fonction "compute".
+       La morale est que forEach est surtout pertinent pour les traitement indépendents des éléments d'un tableau */
+    let sum = 0;
+
+    /* Déclaration externe de la fonction d'itération déclenchée par la méthode forEach() */
+    function compute(note) {
+        sum += note;
+    }
+
+    /*
+     * Le commentaire de cette fonction est le même que dans la version 1
+     */
+
+    function average(noteArray) {
+        noteArray.forEach(compute);
+        console.log (`La moyenne est : ${(sum / noteArray.length).toFixed(2)}`)
+    }
+
+
+</script>
+</body>
+</html>

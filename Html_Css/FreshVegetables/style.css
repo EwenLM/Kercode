@@ -1,0 +1,471 @@
+/* variables pour le site */
+:root {
+    --couleur-principale: #43960f;
+}
+
+/* Pour éviter le scroll horizontale, cache les éléments */
+html,
+body {
+    overflow-x: hidden;
+}
+
+/* poppins-regular - latin */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    src: url('fonts/poppins-v20-latin-regular.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+/* poppins-800 - latin */
+@font-face {
+    font-display: swap;
+    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 800;
+    src: url('fonts/poppins-v20-latin-800.woff2') format('woff2');
+    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.fondgris {
+    background-color: rgb(228, 223, 223);
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+body {
+    font-family: 'Poppins';
+}
+
+#bandeau {
+    background-color: rgb(228, 223, 223);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#bandeau #logo {
+    width: 25%;
+}
+
+#menuPrincipal #burger{
+    display: none;
+}
+
+#menuPrincipal #burger i{
+    font-size: 2.2rem;
+}
+
+#menuPrincipal ul {
+    display: flex;
+}
+
+#menuPrincipal ul li a {
+    margin-left: 35px;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+#menuPrincipal ul li a:hover,
+#menuPrincipal ul li a.choix {
+    color: var(--couleur-principale, );
+}
+
+/* Article a propos */
+.apropos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    box-shadow: 2px 5px 5px 2px rgba(0, 0, 0, 0.2);
+    margin-top: 60px;
+    background-color: whitesmoke;
+}
+
+.apropos:hover {
+    box-shadow: 2px 8px 8px 2px rgba(0, 0, 0, 0.2);
+}
+
+.apropos .textArticle,
+.apropos img {
+    width: 49%;
+}
+
+.apropos .textArticle h2 {
+    background-color: var(--couleur-principale);
+    /* " -- " appelle variable de la couleur */
+    color: white;
+    text-transform: uppercase;
+    /* lettres en majuscule */
+    width: 26%;
+    text-align: center;
+    font-size: 1.6rem;
+    padding: 5px 15px;
+}
+
+.apropos .textArticle {
+    padding: 30px;
+    box-sizing: border-box;
+    /* Gère le padding sans touher au largeur de la div*/
+}
+
+.apropos .textArticle p {
+    margin: 24px 0;
+    line-height: 1.7rem;
+}
+
+.apropos .textArticle a {
+    background-color: black;
+    color: whitesmoke;
+    padding: 7px 18px;
+    border-radius: 35px;
+    text-transform: uppercase;
+}
+
+/*================================Bloc fresh==============================================*/
+#fresh {
+    display: flex;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+#fresh .textefresh {
+    width: 40%;
+}
+
+#fresh .textefresh h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+}
+
+#fresh .textefresh p {
+    width: 90%;
+    margin-top: 20px;
+}
+
+#fresh .panier1,
+#fresh .panier2 {
+    position: relative;
+}
+
+.image2 {
+    width: 626px;
+    height: 427px;
+}
+
+#fresh figure:last-of-type {
+    bottom: 50px;
+}
+
+.pastille {
+    background-color: var(--couleur-principale);
+    color: #fff;
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: -20px;
+    top: 40%;
+}
+
+/* ===============================Bloc Temoiggnages================================= */
+.temoignageSlider{
+    background-image: url(images_Fresh_Vegetables/test2.png);
+}
+
+
+
+
+
+/* ===============================Bloc Contact + Map ====================================*/
+#contenu {
+    background-image: url(images_Fresh_Vegetables/banner2.png);
+    background-position: bottom;
+    background-repeat: no-repeat;
+}
+
+#contenu h2.titresansfond {
+    width: 100%;
+    text-align: center;
+    margin-top: 40px;
+    font-size: 1.8rem;
+    text-transform: uppercase;
+
+}
+
+.vert {
+    color: var(--couleur-principale);
+}
+
+#contact {
+    background-color: #fff;
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 2px 5px 5px 2px rgba(0, 0, 0, 0.2);
+    transition: 0.3;
+    margin-bottom: 30px;
+}
+
+#contact:hover {
+    box-shadow: 4px 8px 8px 4px rgba(0, 0, 0, 0.2);
+}
+
+#contact #formulaire {
+    box-sizing: border-box;
+    width: 50%;
+    padding: 100px 3% 30px 2%;
+}
+
+#contact #formulaire input[type=text],
+#contact #formulaire input[type=email],
+#contact #formulaire input[type=tel],
+#contact #formulaire textarea {
+    width: 90%;
+    padding: 10 px 5px;
+    height: 40px;
+}
+
+#contact #formulaire p {
+    margin: 25px 0;
+}
+
+#contact #formulaire textarea {
+    height: 100px;
+    padding-top: 50px;
+}
+
+#contact #formulaire input[type=submit] {
+    background-color: var(--couleur-principale);
+    color: whitesmoke;
+    padding: 8px 32px;
+    float: right;
+    margin-right: 50px;
+    border: none;
+}
+
+#contact #formulaire input[type=submit]:focus {
+    box-shadow: 4px 8px 8px 4px rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+}
+
+#contact #map {
+    width: 50%;
+}
+
+/*====================================== Footer*==================================================*/
+
+#pied {
+    background-color: #333;
+    color: white;
+}
+
+#pied #bas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#pied #bas .logobas img {
+    width: 10%;
+    margin-top: 40px;
+}
+
+#pied #bas .logobas {
+    width: 100%;
+}
+
+#pied #bas .colonne {
+    width: 32%;
+}
+
+#pied #bas .colonne ul {
+    display: flex;
+}
+
+#pied #bas .colonne ul li a {
+    color: white;
+    font-size: 2rem;
+    margin: 7px;
+}
+
+#pied #bas .colonne ul li a:hover {
+    opacity: 0.6;
+    color: var(--couleur-principale);
+}
+
+#pied #bas .colonne input {
+    padding: 5px 10px;
+}
+
+#pied #bas .colonne input[type=email] {
+    width: 80%;
+}
+
+#pied #bas .colonne input[type=submit] {
+    background-color: var(--couleur-principale);
+    color: white;
+    border: none;
+    border-radius: 35px;
+}
+
+#pied #bas .colonne p {
+    margin: 10px;
+}
+
+#pied #copyright {
+    background-color: var(--couleur-principale);
+    text-align: center;
+    padding: 10px;
+    margin-top: 30px;
+}
+
+/*==============================Slider=========================================*/
+.nivo-caption {
+
+    left: 50px;
+    bottom: 300px;
+    background: transparent;
+    color: black;
+    width: 40%;
+    padding: 5px 10px;
+    opacity: 1;
+    -moz-opacity: 1;
+    filter: alpha(opacity=1);
+
+}
+
+.nivo-caption h2 {
+    color: var(--couleur-principale);
+    margin: 32px 0;
+    font-size: 3rem;
+}
+
+.theme-default .nivoSlider {
+    box-shadow: none;
+}
+
+/*=============================Mediaqueries==========================================*/
+@media screen and (max-width:1050px) {
+
+}
+
+
+
+
+@media screen and (max-width:992px) {
+
+    body {
+        background-color: rgb(172, 131, 211);
+    }
+
+    #bandeau{
+        flex-direction: column;
+    }
+    
+    #bandeau #logo{
+        width: 35%;
+        margin-left: 200px;
+    }
+
+    #menuPrincipal #burger{
+        display: block;
+    }
+    #menuPrincipal ul{
+        display: none;
+    }
+    .apropos {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .apropos .textArticle,
+    .apropos img {
+        width: 100%;
+    }
+
+    .apropos img {
+        width: 70%;
+    }
+
+    #fresh {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    #fresh .textefresh {
+        width: 80%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    figure {
+        padding: 50px;
+    }
+
+    .pastille {
+        right: 45%;
+        top: 5%;
+
+    }
+
+    #contenu {
+        background: transparent;
+    }
+
+}
+
+@media screen and (max-width:768px) {
+
+    body {
+        background-color: rgb(158, 187, 173);
+    }
+
+    #menuPrincipal #burger{
+        display: block;
+    }
+    #menuPrincipal ul{
+        display: none;
+    }
+    
+    /* masquer slider */
+    .slider-wrapper {
+        display: none;
+    }
+
+    /* masque le fond */
+    #contenu {
+        background: transparent;
+    }
+
+    #contact #forumlaire {
+        width: 98px;
+        display: flex;
+        flex-wrap: wrap;
+    }
+
+}

@@ -1,0 +1,18 @@
+body {
+  background-color: bisque;
+}
+
+.item {
+  color: rgb(130, 238, 153);
+}
+
+.contNav {
+  background-color: #333;
+}
+.contNav .nav {
+  width: 150px;
+  background-color: pink;
+}
+.contNav .nav li {
+  font-size: 30px;
+}

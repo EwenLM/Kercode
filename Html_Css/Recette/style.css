@@ -1,0 +1,92 @@
+.carte {
+    width: 330px;
+    height: 530px;
+    margin: 10px auto;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    display: grid;
+    /* 6 rangées / 3 colonnes */
+    grid-template: repeat(2, 100px) 50px repeat(2, 100px) 80px / repeat(3, 110px);
+}
+
+.divImg {
+    grid-area: 1/1/3/4;
+    background: url(tarte/tarteauxpommes.JPG);
+    background-size: cover;
+    background-position: 50% 50%;
+    box-shadow: 0 10px 40px 0 rgba(0, 0, 0, 0.5);
+    filter: brightness(95%);
+}
+
+.titre {
+    grid-area: 3/1/4/4;
+    font-size: 28px;
+    font-weight: 500;
+    padding: 15px;
+}
+
+hr {
+    opacity: 0.8;
+}
+
+.tab {
+    display: flex;
+    justify-self: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.icone {
+    width: 28px;
+    margin-right: 10px;
+}
+
+span {
+    font-weight: 600;
+}
+
+.info {
+    grid-area: 5/1/6/4;
+    padding: 5px;
+    font-size: 14px;
+    text-align: justify;
+}
+
+.btnSection {
+    grid-area: 6/1/7/4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btnSection a {
+    display: block;
+    width: 200px;
+    height: 30px;
+    background-color: brown;
+    text-decoration: none;
+    color: #e2e2e2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+h1{
+    display: flex;
+    justify-content: center;
+}
+
+#lesRecettes{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.mescartes{
+    margin: auto;
+    max-width: 1500px;
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fill, 330px);
+    
+}

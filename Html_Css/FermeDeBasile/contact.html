@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Ferme de Basile</title>
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="nivo-slider .css">
+    <link rel="stylesheet" href="themes/default/default.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body id="contenu">
+    <!-- Logo et nav -->
+    <header id="bandeau">
+        <a href="index.html">
+            <img src="image/logobansf.png" id="logo" alt="www.lafermedebasile.fr">
+        </a>
+        <section id="menuBandeau">
+            <div id="burger"><i class="fa-solid fa-bars"></i></div>
+            <div id="compte">
+                <a class="iconeCompte panier" href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                <a class="iconeCompte log"><i class="fa-solid fa-user"></i></a>
+            </div>
+        </section>
+        <nav id="menuPrincipal">
+            <ul>
+                <li><a href="index.html" >Accueil</a></li>
+                <li><a href="actu.html">Actualités</a></li>
+                <li><a href="produit.html">Produits</a></li>
+                <li><a href="contact.html" class="current">Contact</a></li>
+                <li><a class="formatDesk" href="compte.html">Compte Client</a></li>
+                <li><a class="formatDesk" href="#"><i class="fa-solid fa-cart-shopping"></i></a></li>
+                <div id="reseau">
+                    <li><a href="#"><i class="fa-brands fa-square-instagram"></i></a>
+                    <li><a href="https://www.facebook.com/Lafermedebasile/?locale=fr_FR" target="_blank"><i
+                                class="fa-brands fa-square-facebook"></i></a>
+                </div>
+            </ul>
+
+        </nav>
+        <div id="login">
+                <a href="compte.html#connect">Se Connecter</a><br>
+                <a href="compte.html#compte">Créer un compte</a>
+        </div>
+    </header>
+    <main id="container">
+        <section class="contact">
+            <h2>Nous Contacter</h2>
+            <form action="envoyerform.php" id="formContact">
+                <p id="genre">
+                    <input type="checkbox" name="choix" id="madame" value="madame"><label for="madame">Madame</label>
+                    <input type="checkbox" name="choix" id="monsieur" value="monsieur"><label
+                        for="monsieur">Monsieur</label>
+                    <input type="checkbox" name="choix" id="autre" value="autre"><label for="autre">Autre</label>
+
+                </p>
+                </p>
+                <p>
+                    <input type="text" name="nom" class="nom" placeholder="Nom *">
+                    <input type="text" name="prenom" class="nom" placeholder="Prénom *">
+                </p>
+
+                <p>
+                    <input type="email" name="email" class="coord" placeholder="Email *">
+                    <input type="tel" name="telephone" class="coord" placeholder="Telephone ">
+                </p>
+                <p>
+                    <input type="text" name="objet" class="objet" placeholder="Objet *">
+                </p>
+                <p>
+                    <textarea name="message" rows="8" placeholder="Comment pouvons-nous vous aider ? "></textarea>
+                </p>
+                <p>
+                    <input type="checkbox" name="rgpd" id="rgpd" value="rgpd"><label for="rgpd">
+                        J'autorise ce site à utliser mes données personelle selon notre 
+                        <a class="politique" href="#">politique de Confidentialité *</a></label>
+                </p>
+                <p class="champs"> * Champs obligatoire</p>
+                <p id="button">
+                    <input type="reset" class="bouton" value="Annuler">
+                    <input type="submit" class="bouton" value="Envoyer" id="envoyer" disabled>
+                </p>
+
+            </form>
+        </section>
+        <div id="containMap">
+            <iframe id="map"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2612.1202871132227!2d2.512489076478557!3d49.10335527136646!2m3!1f
+        0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47e6399830899871%3A0xe8970cce5d1e2e20!2sLa%20ferme%20de%20Basile!5e0!3m2!1sfr!2sfr!4v1702287199451!5m2!1sfr!2sfr" " allowfullscreen="" loading="
+                lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </div>
+    </main>
+    <!-- ========================================Footer======================================================= -->
+    <footer id="pied">
+        <aside id="bas">
+            <div class="colonne">
+                <h3>Nos Horaires</h3>
+                <p>Mardi/Jeudi <br>
+                    15h30-19 <br>
+                    Mercredi/Vendredi/Samedi <br>
+                    09h30-12h30 <br>
+                    15h30-19h
+                </p>
+            </div>
+            <div>
+                <a id="logorond" href="index.html"><img src="image/logorondbg.png" alt="Logo"></a>
+            </div>
+            <div class="colonne">
+                <h3>Nous retrouver</h3>
+                <a href="https://www.google.com/maps/place/La+ferme+de+Basile/
+                    @49.1033553,2.515064,15z/data=!4m2!3m1!1s0x0:0xe8970cce5d1e2e20?sa=X&ved=2ahUKEwiF7qC8xYmDAxVo6wIHHcEOAKsQ_
+                    BJ6BAgVEAA" target="_blank">
+                    <p>
+                        La Ferme de Basile <br>
+                        700 avenue de Beaumont <br>
+                        95250 Fosses <br>
+                    </p>
+                </a>
+                <div id="reseauFooter">
+                    <a class="reseauLogo" href="#"><i class="fa-brands fa-square-instagram"></i></a>
+                    <a class="reseauLogo" target="_blank"
+                        href="https://www.facebook.com/Lafermedebasile/?locale=fr_FR"><i
+                            class="fa-brands fa-square-facebook"></i></a>
+                </div>
+            </div>
+        </aside>
+        <div class="mentions">
+            <p>Greta 2023 - <a href="mention.html" target="_blank">Mentions Légales</a>- <a href="cgv.html">CGV</a></p>
+        </div>
+
+    </footer>
+
+    <script type="text/javascript" src="scripts/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="scripts/rgpd.js"></script>
+    <script src="scripts/jquery.nivo.slider.js"></script>
+
+
+    <script>
+        $(window).load(function () {
+            $('#slider').nivoSlider();
+        });
+        $(window).load(function () {
+            $('#slider2').nivoSlider();
+        });
+
+        $("#burger i").click(function () {
+            $("#menuPrincipal ul").addClass("on").toggle(600);
+        });
+        $(".log i").click(function () {
+            $("#login").addClass("on").slideToggle(500);
+        });
+    </script>
+</body>
+
+</html>
