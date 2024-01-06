@@ -872,7 +872,7 @@ textarea {
     }
 
     #slider2 .bouton {
-        width: 200px;
+        width: 200px; 
     }
 
     .theme-default .nivo-controlNav a {
@@ -880,6 +880,7 @@ textarea {
         height: 15px;
         padding: 0px !important;
         background-color: white !important;
+        box-shadow: none !important;
     }
 
     .theme-default .nivo-directionNav a {
@@ -887,6 +888,27 @@ textarea {
         background-color: transparent !important;
         color: var(--beige) !important;
         opacity: 1 !important;
+        box-shadow: none !important;
+    }
+/* ========================= Slider Page Actu============================================ */
+
+    .sliderActuUn .nivo-prevNav  {
+        left: 51% !important;
+        box-shadow: none !important;
+    }
+
+    .sliderActuUn .nivo-nextNav  {
+        box-shadow: none !important;
+    }
+
+    .sliderActuDeux .nivo-nextNav  {
+        right: 50.1% !important;
+        box-shadow: none !important;
+    }
+
+    .sliderActuDeux .nivo-prevNav  {
+        left: 0.1% !important;
+        box-shadow: none !important;
     }
 
     /* ========================Page Actu > 768px==============================*/
