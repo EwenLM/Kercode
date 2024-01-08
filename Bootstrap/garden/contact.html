@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- css slider -->
+    <link rel="stylesheet" href="nivo-slider .css">
+    <link rel="stylesheet" href="themes/default/default.css">
+    <!-- ========== -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Header h1 et nav -->
+    <header id="bandeau" class="container" role="banner">
+        <h1>
+            <a href="index.html" class="logo">G</a>
+        </h1>
+        <nav id="menuPrincipal" role="navigation">
+            <div id="burger">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <ul>
+                <li><a href="index.html" id="linkAccueil" class="choix">Accueil</a></li>
+                <li><a href="#">A&nbsp;propos</a></li>
+                <li><a href="ideepayasge.html">Galerie</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="contact.html" id="linkContact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="contenu" class="container contact">
+        <section></section>
+        <h2>Nous Contacter</h2>
+        <p>Addressez-nous votre demande à l'aide du formulaire ci dessous.
+            Veillez à bien remplir vos coordonnées (adresse email)
+            qui nous permettront de vous répondre.</p>
+
+        <form action="envoyerform.php" id="formContact">
+            <p><select class="vousetes" name="identite">
+                    <option>Vous êtes</option>
+                    <option value="particulier">Particulier</option>
+                    <option value="professionnel">Professionnel</option>
+                </select>
+            </p>
+            <p id="name">
+                <input type="text" name="nom" class="nom" placeholder="Nom *">
+                <input type="text" name="prenom" class="nom" placeholder="Prénom *">
+            </p>
+            <p>
+                <select class="votresouhait" name="souhait">
+                    <option>Vous souhaitez</option>
+                    <option value="telephone">Etre rappeler par téléphone</option>
+                    <option value="email">Etre recontacter par mail</option>
+                </select>
+            </p>
+            <p>
+                <input type="email" name="email" class="coord" placeholder="Email">
+                <input type="tel" name="telephone" class="coord" placeholder="Telephone">
+            </p>
+            <p>
+                <input type="text" name="sujet" class="sujet" placeholder="Sujet *">
+            </p>
+            <p>
+                <textarea name="message" rows="8" placeholder="Comment pouvons-nous vous aider ? "></textarea>
+            </p>
+            <p>
+                Vous possédez :<br>
+                <input type="checkbox" name="choix" id="jardin" value="jardin"><label for="jardin">Un Jardin</label>
+                <input type="checkbox" name="choix" id="animaux" value="animaux"><label for="animaux">Des
+                    Animaux</label>
+                <input type="checkbox" name="choix" id="autre" value="autre"><label for="autre">Autre</label>
+
+            </p>
+            <p>
+                <input type="checkbox" name="rgpd" id="rgpd" value="rgpd"><label for="rgpd">
+                    J'autorise ce site à utliser mes données personelle selon notre
+                    <a href="#">politique de Confidentialité</a></label>
+            </p>
+            <p>
+                <input type="reset" class="bouton" value="Annuler">
+                <input type="submit" class="bouton" value="Envoyer">
+            </p>
+
+        </form>
+
+
+
+
+        </section>
+    </main>
+
+
+
+
+    <script type="text/javascript" src="scripts/jquery-1.9.0.min.js"></script>
+    <script src="scripts/jquery.nivo.slider.js"></script>
+    <script src="scripts/catagories.js"></script>
+    <script>var page = "contact"</script>
+    <script src="scripts/choix.js"></script>
+    <script>
+        $(window).load(function () {
+            $('#slider').nivoSlider();
+        });
+        $("#menuPrincipal #burger i").click(function () {
+            $("#menuPrincipal ul").addClass("on").slideToggle(1500);
+        });
+    </script>
+</body>
+
+</html>

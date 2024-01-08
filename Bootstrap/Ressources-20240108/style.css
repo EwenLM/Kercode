@@ -1,0 +1,47 @@
+/* =========Variables */
+
+/* raleway-regular - latin */
+@font-face {
+    font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 400;
+    src: url('font/raleway-v29-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
+  }
+
+  /* ========================== */
+*{
+    font-family: 'Raleway';
+}
+.mi-header{
+    height:500px;
+    background-image: url(images/banner.jpg);
+}
+
+.mi-nav{
+    left: 85%;
+    position: absolute;
+    z-index: 1000;
+}
+
+.mi-button{
+    background-color: #54B7A3;
+    border-radius: 20px;
+    padding: 10px 35px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.mi-button:hover{
+    background-color: #367569 !important;
+}
+
+.mi-banner-text{
+    margin-top: 80px;
+}
+
+i.fa-regular{
+    font-size: 3rem;
+    padding: 15px;
+    border-style: solid;
+}
